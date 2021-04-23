@@ -9,4 +9,4 @@ export const env = load({
   DB: String
 });
 
-export const PATH = require('app-root-path') + "/src/api";
+export const PATH = require('app-root-path') + "/src";
