@@ -106,3 +106,7 @@ dist
 .history
 
 package-lock.json
+
+out 
+
+dist
