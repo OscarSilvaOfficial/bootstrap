@@ -8,3 +8,5 @@ export const env = load({
   PASSWD: String,
   DB: String
 });
+
+export const PATH = require('app-root-path') + "/src/api";

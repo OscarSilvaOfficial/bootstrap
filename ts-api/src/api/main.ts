@@ -1,17 +1,14 @@
 import "reflect-metadata"
-import express from 'express'
 import { env } from './config/env'
-import { router } from './router/urls'
 import { Connection } from './config/defaultConneciton'
+import RestController from './controller/index'
+import { createExpressServer } from 'routing-controllers';
 
-const app = express()
 Connection.MySqlConnect()
 
-app.use(
-  express.json(),
-  express.urlencoded({extended: true}),
-  router
-)
+const app = createExpressServer({
+  controllers: [RestController],
+});
 
 app.listen(env.PORT, () => {
   console.log(`Server on | PORT ${env.PORT}`)

@@ -1,5 +1,5 @@
 import { createConnection } from "typeorm";
-import { env } from './env'
+import { env, PATH } from './env'
 
 export class Connection {
 
@@ -12,12 +12,15 @@ export class Connection {
       password: env.PASSWD,
       database: env.DB,
       entities: [
-        __dirname + "/models/*.ts"
+        PATH + "/models/*.ts"
       ],
       synchronize: true,
       logging: false
     })
-    .then(connection => { console.log(`DB Is connect: ${connection.isConnected}`)})
+    .then(connection => { 
+      console.log(`DB Is connect: ${connection.isConnected}`)
+      console.log(`Entities dirs: ${PATH + "/models/*.ts"}`)
+    })
     .catch(error => console.log(error));
   }
 
