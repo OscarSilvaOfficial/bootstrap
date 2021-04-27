@@ -1,5 +1,5 @@
 import { Generic } from '../models/Generic'
-import { JsonController, Param, Body, Get, Post, Put, Delete, Patch } from 'routing-controllers';
+import { JsonController, Param, Body, Get, Post, Delete, Patch } from 'routing-controllers';
 
 @JsonController()
 class RestController {
